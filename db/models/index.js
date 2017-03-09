@@ -10,6 +10,7 @@ const Secret = require('./secret')
 
 OAuth.belongsTo(User)
 User.hasOne(OAuth)
+
 module.exports = {
   User,
   Secret,

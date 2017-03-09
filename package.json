@@ -1,7 +1,7 @@
 {
-  "name": "stackathon",
+  "name": "deddrop",
   "version": "0.0.1",
-  "description": "A happy little web app for reading and leaving geo-located secrets.",
+  "description": "A web app for reading and leaving anonymous geo-located secrets.",
   "main": "index.js",
   "scripts": {
     "validate": "check-node-version --node '>= 6.7.0'",
