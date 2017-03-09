@@ -18,9 +18,11 @@ import AppBar from 'material-ui/AppBar'
 export default function App ({ children }) {
   return (
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
-      <AppBar title="deddrop" />
       <div>
-        {children}
+        <AppBar title="deddrop" />
+        <div id="dynamic-view">
+          {children}
+        </div>
       </div>
     </MuiThemeProvider>
   )

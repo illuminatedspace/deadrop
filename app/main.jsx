@@ -26,8 +26,8 @@ render (
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
-{/*        <IndexRedirect to="/jokes" />
-        <Route path="/jokes" component={Jokes} />*/}
+        <IndexRedirect to="/jokes" />
+        <Route path="/jokes" component={Jokes} />
       </Route>
     </Router>
   </Provider>,
