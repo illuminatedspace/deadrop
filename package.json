@@ -1,7 +1,7 @@
 {
-  "name": "__BONES_NEEDS_A_NAME__",
+  "name": "deddrop",
   "version": "0.0.1",
-  "description": "A happy little skeleton.",
+  "description": "A web app for reading and leaving anonymous geo-located secrets.",
   "main": "index.js",
   "scripts": {
     "validate": "check-node-version --node '>= 6.7.0'",
@@ -28,14 +28,15 @@
   "keywords": [
     "react",
     "redux",
-    "skeleton"
+    "geolocation",
+    "social"
   ],
-  "author": "Ashi Krishnan <me@ashi.works>",
+  "author": "Liz Phillips <lizkristinaphillips@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/queerviolet/bones/issues"
+    "url": "https://github.com/illuminatedspace/stackathon/issues"
   },
-  "homepage": "https://github.com/queerviolet/bones#readme",
+  "homepage": "https://github.com/illuminatedspace/stackathon",
   "dependencies": {
     "axios": "^0.15.2",
     "babel-preset-stage-2": "^6.18.0",
@@ -49,6 +50,7 @@
     "enzyme": "^2.5.1",
     "express": "^4.14.0",
     "finalhandler": "^1.0.0",
+    "material-ui": "^0.17.0",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
     "passport-github2": "^0.1.10",
