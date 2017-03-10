@@ -4,7 +4,7 @@ import axios from 'axios'
 const reducer = (state = null, action) => {
   switch(action.type) {
     case submitSecret:
-      return action.secret
+      return state
 
     default:
       return state
@@ -14,16 +14,22 @@ const reducer = (state = null, action) => {
 //SYNC ACTION CREATORS
 const SUBMIT_SECRET = 'SUBMIT_SECRET'
 export const submitSecret = secret => ({
-  type: SUBMIT_SECRET, secret
+  type: SUBMIT_SECRET
 })
 
 //ASYNC ACTION CREATORS
 //will need to add a user to this when users are implemented
-export const storeSecret = (secret) =>
-  dispatch =>
-    axios.post('/api/secrets/drop',
-      {secret})
-    .then((secret) => dispatch(submitSecret(secret)))
+export const storeSecret = (secret, longitude, latitude) =>
+  dispatch => {
+    axios.post('/api/secrets/drop', {
+      secret: secret,
+      longitude: longitude,
+      latitude: latitude,
+      })
+    .then((secret) => {
+      dispatch(submitSecret())
+    })
     .catch(console.error)
+  }
 
 export default reducer

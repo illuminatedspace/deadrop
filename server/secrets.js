@@ -13,11 +13,14 @@ module.exports = require('express').Router()
 
   //makes a new secret
   .post('/drop', (req, res, next) => {
-    let text = req.body.text,
-        coordinates = req.body.coordinates
+    let text = req.body.secret,
+        latitude = req.body.latitude,
+        longitude = req.body.longitude
+    console.log('IN POST ROUTE', req.body)
     Secret.create({
       text: text,
-      coordinates: coordinates,
+      latitude: latitude,
+      longitude: longitude,
     })
     .then(secret => res.send(secret))
     .catch(next)
