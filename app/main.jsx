@@ -6,12 +6,16 @@ import {connect, Provider} from 'react-redux'
 
 import store from './store'
 
+//CONTAINERS
+import DropContainer from './containers/DropContainer'
+
+//REACT COMPONENTS
+import App from './components/App'
+
+//leaving this here for reference
 import Jokes from './components/Jokes'
 import Login from './components/Login'
 import WhoAmI from './components/WhoAmI'
-import App from './components/App'
-import Drop from './components/Drop'
-
 const ExampleApp = connect(
   ({ auth }) => ({ user: auth })
 ) (
@@ -30,7 +34,7 @@ render (
       <Route path="/" component={App}>
         <IndexRedirect to="/jokes" />
         <Route path="/jokes" component={Jokes} />
-        <Route path="/drop" component={Drop} />
+        <Route path="/drop" component={DropContainer} />
       </Route>
     </Router>
   </Provider>,

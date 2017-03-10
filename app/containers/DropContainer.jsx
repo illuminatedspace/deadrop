@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { storeSecret } from '..reducers/secret'
+import { storeSecret } from '../reducers/secret'
 
-class DropContainer extends Component {
+import Drop from '../components/Drop'
+
+export default class DropContainer extends Component {
   constructor (props) {
     super(props)
 
@@ -11,20 +13,20 @@ class DropContainer extends Component {
 
     }
     //might need to bind this. trying without first
-    // this.submitSecret = this.submitSecret.bind(this)
+    this.submitSecret = this.submitSecret.bind(this)
   }
 
   submitSecret (event) {
     event.preventDefault()
     this.props.storeSecret(this.state.secret)
-    this.setState({
-      secret: null,
-    })
+    // this.setState({
+    //   secret: null,
+    // })
   }
 
   render() {
     return(
-      <DropContainer
+      <Drop
         submitSecret={this.submitSecret}
       />
     )

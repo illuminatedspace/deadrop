@@ -11,6 +11,8 @@ const Secret = require('./secret')
 OAuth.belongsTo(User)
 User.hasOne(OAuth)
 
+//Will need to add user > secret associations later
+
 module.exports = {
   User,
   Secret,

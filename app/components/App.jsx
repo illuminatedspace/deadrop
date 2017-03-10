@@ -19,7 +19,7 @@ export default function App ({ children }) {
   return (
     <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
       <div>
-        <AppBar title="deddrop" />
+        <AppBar title="deaddrop" />
         <div id="dynamic-view">
           {children}
         </div>
