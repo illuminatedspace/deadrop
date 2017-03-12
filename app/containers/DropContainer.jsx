@@ -15,7 +15,6 @@ class DropContainer extends Component {
       longitude: null,
     }
 
-    //might need to bind this. trying without first
     this.handleChange = this.handleChange.bind(this)
     this.submitSecret = this.submitSecret.bind(this)
     this.getCoordinates = this.getCoordinates.bind(this)
