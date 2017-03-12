@@ -23,7 +23,7 @@ const Secret = db.model('secrets')
     let longitudeMax = +longitude + 0.0008
     let latitudeMin = +latitude - 0.0008
     let latitudeMax = +latitude + 0.0008
-    console.log('~~~~~body', req.body)
+    // console.log('~~~~~body', req.body)
     Secret.findAll({
       where: {
         longitude: {
@@ -42,19 +42,22 @@ const Secret = db.model('secrets')
   router.put('/here', (req, res, next) => {
     let longitude = req.body.longitude
     let latitude = req.body.latitude
+    let longitudeMin = +longitude - 0.0004
+    let longitudeMax = +longitude + 0.0004
+    let latitudeMin = +latitude - 0.0004
+    let latitudeMax = +latitude + 0.0004
+    // console.log('~~~~~body', req.body)
     Secret.findAll({
       where: {
         longitude: {
-          gte: longitude - 0.0003,
-          lte: longitude + 0.0003,
+          between: [longitudeMin, longitudeMax]
         },
         latitude: {
-          gte: latitude - 0.0003,
-          lte: latitude + 0.0003,
+          between: [latitudeMin, latitudeMax]
         },
       }
     })
-    .then(nearby => res.send(nearby))
+    .then(here => res.send(here))
     .catch(next)
   })
 
@@ -69,7 +72,7 @@ const Secret = db.model('secrets')
       latitude: latitude,
       longitude: longitude,
     })
-    .then(secret => res.send(secret))
+    .then(secret => res.status(201).send(secret))
     .catch(next)
   })
 

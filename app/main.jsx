@@ -8,10 +8,12 @@ import store from './store'
 
 //CONTAINERS
 import DropContainer from './containers/DropContainer'
+import SecretsContainer from './containers/SecretsContainer'
 
 //REACT COMPONENTS
 import App from './components/App'
-/*import NearbySecrets from './NearbySecrets'*/
+// import Secrets from './Secrets'
+// import Secret from './Secret'
 
 //leaving this here for reference
 import Jokes from './components/Jokes'
@@ -36,7 +38,8 @@ render (
         <IndexRedirect to="/jokes" />
         <Route path="/jokes" component={Jokes} />
         <Route path="/drop" component={DropContainer} />
-{/*        <Route path="/secrets" component={NearbySecrets} />*/}
+        <Route path="/secrets" component={SecretsContainer} />
+        {/*<Route path="/secret" component={Secret} />*/}
       </Route>
     </Router>
   </Provider>,
