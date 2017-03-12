@@ -21,20 +21,25 @@ To install:
 ### 2. Install Dependencies
 
 ```npm install
+
 or there is a yarn.lock file
+
 ```yarn install
 
 ### 3. Seed the Database
 
 ```npm run seed
+
 This will seed 3 secrets in the Financial District where deadrop was made.
 
 ### 3. Build the Files and Run the Server
 
 To run a dev environment:
+
 ```npm run dev
 
 To run a production environment:
+
 ```npm start
 
 ## Questions || Concerns
