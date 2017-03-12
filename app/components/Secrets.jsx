@@ -23,7 +23,7 @@ console.log('SECRETS PROPS',props)
   return(
   <div>
     <Paper zDepth={1}>
-      <p>There are {props.nearby || 0} secrets nearby.</p>
+      <p>There are {props.secretsNearby.length || 0} secrets nearby.</p>
     </Paper>
 
     <Paper zDepth={3} style={styles.root}>
@@ -32,7 +32,7 @@ console.log('SECRETS PROPS',props)
         style={styles.gridList}
       >
         <Subheader>Secrets Here</Subheader>
-        {props.secrets && props.secrets.map((secret, index) => (
+        {props.secretsHere.map((secret, index) => (
           <GridTile
             key={index}
             onClick={props.setCurrentSecret}

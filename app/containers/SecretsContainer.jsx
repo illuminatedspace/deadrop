@@ -101,8 +101,12 @@ class SecretsContainer extends Component {
     return (
       <div>
         {this.state.secretsLoaded ?
-          <div>{this.state.secretsHere}</div>
-          : <div>Loading</div>
+          <Secrets
+            setCurrentSecret={this.setCurrentSecret}
+            secretsNearby={this.state.secretsNearby}
+            secretsHere={this.state.secretsHere}
+          />
+          : <div>Loading Secrets</div>
         }
       </div>
     )
