@@ -31,7 +31,6 @@ class DropContainer extends Component {
 
   submitSecret (event) {
     event.preventDefault()
-    console.log('STATE IN SUBMIT', this.state.latitude, this.state.longitude)
     this.props.storeSecret(this.state.secret, this.state.latitude, this.state.longitude)
 
     this.setState({

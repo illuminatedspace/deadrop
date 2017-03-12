@@ -38,7 +38,6 @@ class SecretsContainer extends Component {
     // this.setState({
     //   currentSecret: this.event.target.id,
     // })
-    console.log('~~~currentSecret',event.target)
   }
 
   fetchNearby () {
@@ -47,7 +46,6 @@ class SecretsContainer extends Component {
       longitude: this.state.longitude
     })
     .then(results => {
-      console.log('SECRETS NEARBY',results.data)
       return this.setState({
         secretsNearby: results.data,
       })
@@ -61,17 +59,12 @@ class SecretsContainer extends Component {
       longitude: this.state.longitude
     })
     .then(results => {
-      console.log('SECRETS HERE',results.data)
       return this.setState({
         secretsHere: results.data,
       })
     })
     .catch(console.error)
   }
-
-  // componentWillMount () {
-  //   console.log('IN SECRETS WILL MOUNT')
-  // }
 
   componentDidMount () {
     this.getCoordinates()

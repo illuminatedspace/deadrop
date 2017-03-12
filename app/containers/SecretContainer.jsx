@@ -14,10 +14,8 @@ class SecretContainer extends Component {
   }
 
   componentDidMount() {
-    // console.log('SECRET PROPS',this.props)
     let secretId = this.props.location.pathname.split('/')
     secretId = secretId[secretId.length - 1]
-    console.log('SECRET ID',secretId)
     axios.get(`/api/secrets/${secretId}`)
     .then(results => {
       this.setState({
@@ -27,9 +25,8 @@ class SecretContainer extends Component {
   }
 
   render () {
-    console.log('SECRET CONTAINER STATE SECRET',this.state.secret)
     return (
-      <Secret secret={this.state.secret}/>
+      <Secret secret={this.state.secret} />
     )
   }
 
@@ -38,10 +35,6 @@ class SecretContainer extends Component {
 const mapStateToProps = (state) => ({
   currentSecret: state.currentSecret,
 })
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-
-}
 
 export default connect(
   mapStateToProps,
