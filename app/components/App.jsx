@@ -61,7 +61,7 @@ const rightButtons = (
   <span>
     <FlatButton
       label="drop"
-      href="/secrets"
+      href="/drop"
       default={true}
       style={styles.button}
     />
