@@ -9,3 +9,14 @@ body {
 #dynamic-view {
   margin: 30px;
 }
+
+#footer {
+  font-family: 'Roboto';
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: inline;
+  font-size: 12px;
+  color: #FFE082;
+  text-align: center;
+}

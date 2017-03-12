@@ -89,6 +89,9 @@ export default function App ({ children }) {
         <div id="dynamic-view">
           {children}
         </div>
+      <div id="footer">
+        <p>&copy; Liz Phillips <a href="http://www.lizkristinaphillips.com">lizkristinaphillips.com</a></p>
+      </div>
       </div>
     </MuiThemeProvider>
   )
