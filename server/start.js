@@ -50,6 +50,8 @@ module.exports = app
   // Serve static files from ../public
   .use(express.static(resolve(__dirname, '..', 'public')))
 
+  .use('/github', (req, res, next) => res.redirect('https://github.com/illuminatedspace/deadrop'))
+
   // Serve our api - ./api also requires in ../db, which syncs with our database
   .use('/api', require('./api'))
 
