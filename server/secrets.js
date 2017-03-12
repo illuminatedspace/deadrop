@@ -14,6 +14,16 @@ const Secret = db.model('secrets')
     .catch(next)
   })
 
+//returns one with a specific id
+  router.get('/:secretId', (req, res, next) => {
+    Secret.findOne({
+      where: {
+        id: req.params.secretId,
+      }
+    })
+    .then(secret => res.send(secret.text))
+  })
+
 //returns nearby secrets
 //put route for payload with location
   router.put('/nearby', (req, res, next) => {

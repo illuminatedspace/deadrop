@@ -9,11 +9,10 @@ import store from './store'
 //CONTAINERS
 import DropContainer from './containers/DropContainer'
 import SecretsContainer from './containers/SecretsContainer'
+import SecretContainer from './containers/SecretContainer'
 
 //REACT COMPONENTS
 import App from './components/App'
-// import Secrets from './Secrets'
-// import Secret from './Secret'
 
 //leaving this here for reference
 import Jokes from './components/Jokes'
@@ -39,7 +38,7 @@ render (
         <Route path="/jokes" component={Jokes} />
         <Route path="/drop" component={DropContainer} />
         <Route path="/secrets" component={SecretsContainer} />
-        {/*<Route path="/secret" component={Secret} />*/}
+        <Route path="/secret/:secretId" component={SecretContainer} />
       </Route>
     </Router>
   </Provider>,

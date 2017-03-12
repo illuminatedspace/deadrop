@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 
 // import { fetchNearby, fetchHere } from '../reducers/secret'
+import { setSecret } from '../reducers/secret'
 
 import Secrets from '../components/Secrets'
 import Jokes from '../components/Jokes'
@@ -34,9 +35,10 @@ class SecretsContainer extends Component {
   }
 
   setCurrentSecret (event) {
-    this.setState({
-      currentSecret: this.event.target.id,
-    })
+    // this.setState({
+    //   currentSecret: this.event.target.id,
+    // })
+    console.log('~~~currentSecret',event.target)
   }
 
   fetchNearby () {
@@ -96,8 +98,6 @@ class SecretsContainer extends Component {
   }
 
   render() {
-    console.log('RENDER HERE',this.state.secretsHere)
-    console.log('RENDER NEARBY',this.state.secretsNearby)
     return (
       <div>
         {this.state.secretsLoaded ?
