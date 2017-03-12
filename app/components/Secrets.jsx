@@ -40,7 +40,7 @@ let phrasing = props.secretsNearby.length === 1 ? ['is', 'secret'] : ['are', 'se
   return (
   <div>
     <Paper zDepth={1} style={styles.wrapper}>
-      <p>There {phrasing[0]} <strong>{props.secretsNearby.length || 0}</strong> <em>{phrasing[1]} nearby.</em></p>
+      <p><em>There {phrasing[0]} </em><strong>{props.secretsNearby.length || 0}</strong> <em>{phrasing[1]} nearby.</em></p>
     <Paper zDepth={2} style={styles.root}>
       <GridList
         cellHeight={180}

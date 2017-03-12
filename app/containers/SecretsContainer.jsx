@@ -96,7 +96,7 @@ class SecretsContainer extends Component {
         {this.state.secretsLoaded ?
           <Secrets
             setCurrentSecret={this.setCurrentSecret}
-            secretsNearby={this.state.secretsNearby}
+            secretsNearby={this.state.secretsHere - this.state.secretsNearby}
             secretsHere={this.state.secretsHere}
           />
           : <div>Loading Secrets</div>
