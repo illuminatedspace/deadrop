@@ -7,12 +7,12 @@ const Secret = db.model('secrets')
 
 //this is: /api/secrets
 
-  //returns all secrets
-  // router.get('/', (req, res, next) => {
-  //   Secret.findAll()
-  //   .then(secrets => res.send(secrets))
-  //   .catch(next)
-  // })
+  // returns all secrets
+  router.get('/', (req, res, next) => {
+    Secret.findAll()
+    .then(secrets => res.send(secrets))
+    .catch(next)
+  })
 
 //returns one with a specific id
   router.get('/:secretId', (req, res, next) => {
@@ -29,7 +29,7 @@ const Secret = db.model('secrets')
   router.put('/nearby', (req, res, next) => {
     let longitude = req.body.longitude
     let latitude = req.body.latitude
-    let longitudeMin = +longitude - 0.0008
+    let longitudeMin = +longitude - 0.008
     let longitudeMax = +longitude + 0.0008
     let latitudeMin = +latitude - 0.0008
     let latitudeMax = +latitude + 0.0008
@@ -52,10 +52,10 @@ const Secret = db.model('secrets')
   router.put('/here', (req, res, next) => {
     let longitude = req.body.longitude
     let latitude = req.body.latitude
-    let longitudeMin = +longitude - 0.0004
-    let longitudeMax = +longitude + 0.0004
-    let latitudeMin = +latitude - 0.0004
-    let latitudeMax = +latitude + 0.0004
+    let longitudeMin = +longitude - 0.0005
+    let longitudeMax = +longitude + 0.0005
+    let latitudeMin = +latitude - 0.0005
+    let latitudeMax = +latitude + 0.0005
     // console.log('~~~~~body', req.body)
     Secret.findAll({
       where: {
