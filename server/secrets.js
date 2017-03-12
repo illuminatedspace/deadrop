@@ -8,11 +8,11 @@ const Secret = db.model('secrets')
 //this is: /api/secrets
 
   //returns all secrets
-  router.get('/', (req, res, next) => {
-    Secret.findAll()
-    .then(secrets => res.send(secrets))
-    .catch(next)
-  })
+  // router.get('/', (req, res, next) => {
+  //   Secret.findAll()
+  //   .then(secrets => res.send(secrets))
+  //   .catch(next)
+  // })
 
 //returns one with a specific id
   router.get('/:secretId', (req, res, next) => {
