@@ -29,10 +29,10 @@ const Secret = db.model('secrets')
   router.put('/nearby', (req, res, next) => {
     let longitude = req.body.longitude
     let latitude = req.body.latitude
-    let longitudeMin = +longitude - 0.008
-    let longitudeMax = +longitude + 0.0008
-    let latitudeMin = +latitude - 0.0008
-    let latitudeMax = +latitude + 0.0008
+    let longitudeMin = +longitude - 0.01
+    let longitudeMax = +longitude + 0.01
+    let latitudeMin = +latitude - 0.01
+    let latitudeMax = +latitude + 0.01
     // console.log('~~~~~body', req.body)
     Secret.findAll({
       where: {
@@ -52,10 +52,10 @@ const Secret = db.model('secrets')
   router.put('/here', (req, res, next) => {
     let longitude = req.body.longitude
     let latitude = req.body.latitude
-    let longitudeMin = +longitude - 0.0005
-    let longitudeMax = +longitude + 0.0005
-    let latitudeMin = +latitude - 0.0005
-    let latitudeMax = +latitude + 0.0005
+    let longitudeMin = +longitude - 0.005
+    let longitudeMax = +longitude + 0.005
+    let latitudeMin = +latitude - 0.005
+    let latitudeMax = +latitude + 0.005
     // console.log('~~~~~body', req.body)
     Secret.findAll({
       where: {
@@ -76,7 +76,6 @@ const Secret = db.model('secrets')
     let text = req.body.secret,
         latitude = req.body.latitude,
         longitude = req.body.longitude
-    console.log('IN POST ROUTE', req.body)
     Secret.create({
       text: text,
       latitude: latitude,

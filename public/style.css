@@ -12,7 +12,7 @@ body {
 
 #footer {
   font-family: 'Roboto';
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   display: inline;
