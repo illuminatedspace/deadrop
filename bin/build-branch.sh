@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Paths to add to the deployment branch.
 #
 # These paths will be added with git add -f, to include build artifacts
@@ -15,7 +16,7 @@ echoed() {
     $*
 }
 
-if [ $(git status --porcelain 2> /dev/null | grep -v '$\?\?' | tail -n1) ! "" ]; then
+if [[ $(git status --porcelain 2> /dev/null | grep -v '$\?\?' | tail -n1) != "" ]]; then
   echo "${red}Uncommitted changes would be lost. Commit or stash these changes:${off}"
   git status
   exit 1
