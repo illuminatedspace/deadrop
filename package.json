@@ -1,5 +1,5 @@
 {
-  "name": "deaddrop",
+  "name": "deadrop",
   "version": "0.0.1",
   "description": "A web app for reading and leaving anonymous geo-located secrets.",
   "main": "index.js",
