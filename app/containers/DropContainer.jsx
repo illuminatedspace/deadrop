@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 
 import { storeSecret } from '../reducers/secret'
 
+import locationPrompt from '../../utils/locationPrompt'
+
 import Drop from '../components/Drop'
 
 class DropContainer extends Component {
@@ -47,6 +49,10 @@ class DropContainer extends Component {
   }
 
   componentDidMount () {
+    prompt(window,
+   "extensions.foo-addon.allowGeolocation",
+   "Foo Add-on wants to know your location.",
+   function callback(allowed) { alert(allowed); });
     this.getCoordinates()
     .then((position) => {
       this.setState({
