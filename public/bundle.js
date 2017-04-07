@@ -16911,9 +16911,9 @@ var DropContainer = function (_Component) {
     var _this = _possibleConstructorReturn(this, (DropContainer.__proto__ || Object.getPrototypeOf(DropContainer)).call(this, props));
 
     _this.state = {
-      secret: '',
-      latitude: 0,
-      longitude: 0
+      secret: null,
+      latitude: null,
+      longitude: null
     };
 
     _this.handleChange = _this.handleChange.bind(_this);
@@ -16937,9 +16937,9 @@ var DropContainer = function (_Component) {
     value: function submitSecret(event) {
       event.preventDefault();
       this.props.storeSecret(this.state.secret, this.state.latitude, this.state.longitude);
-      console.log('submitting secret', this.state.secret);
+
       this.setState({
-        secret: '',
+        secret: null,
         latitude: this.state.latitude,
         longitude: this.state.longitude
       });
@@ -16966,12 +16966,9 @@ var DropContainer = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log('SECRET ON RENDER', this.state.secret);
       return _react2.default.createElement(_Drop2.default, {
         handleChange: this.handleChange,
-        submitSecret: this.submitSecret,
-        tempValue: this.state.tempValue,
-        secret: this.state.secret
+        submitSecret: this.submitSecret
       });
     }
   }]);
@@ -18280,7 +18277,6 @@ exports.default = function (props) {
         name: 'secret',
         onChange: props.handleChange,
         floatingLabelText: 'secret',
-        value: props.secret,
         multiLine: true,
         fullWidth: true
       }),
